@@ -15,7 +15,7 @@ export class EventComponent implements OnInit {
       api: '/',
       endpoint: 'events/',
       username: 'admin',
-      password: 'pass'
+      password: 'admin'
     };
   }
 

@@ -18,6 +18,15 @@ export class RestService<T> {
       .get<T[]>(this.config.server + this.config.api + this.config.endpoint, {headers: headers});
   }
 
+  public getParam(param: string, value: string): Observable<T[]> {
+    let headers = new HttpHeaders();
+    headers = headers.append('Authorization', 'Basic ' + btoa(this.config.username + ':' + this.config.password));
+    headers = headers.append('Content-Type', 'application/json');
+
+    return this.http
+      .get<T[]>(this.config.server + this.config.api + this.config.endpoint + param + '/' + value, {headers: headers});
+  }
+
   public getOne(id: string): Observable<T> {
     let headers = new HttpHeaders();
     headers = headers.append('Authorization', 'Basic ' + btoa(this.config.username + ':' + this.config.password));

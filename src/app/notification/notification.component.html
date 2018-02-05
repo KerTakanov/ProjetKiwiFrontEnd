@@ -1,0 +1,3 @@
+<p *ngFor="let notification of notifications">
+  <ngb-alert [type]="notification.type" (close)="closeAlert(alert)">{{ notification.content }}</ngb-alert>
+</p>

@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Mes événements</h2>
+  <div *ngFor="let uevent of myEvents">
+    <div class="card event">
+      <div class="card-header">
+        <h3>{{uevent.title}}</h3>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Du {{uevent.date_begin | date: 'dd/MM/yyyy'}} au {{uevent.date_end | date: 'dd/MM/yyyy'}}</h5>
+        <hr>
+        <p class="card-text">{{uevent.description}}</p>
+        <div *ngIf="uevent.suscribed_users.length > 0">
+          <h5>Utilisateurs inscrits</h5>
+          <div *ngFor="let user of uevent.suscribed_users">
+            {{user.username}}
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
