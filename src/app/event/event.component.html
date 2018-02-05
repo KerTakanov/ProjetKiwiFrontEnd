@@ -1,0 +1,10 @@
+<ngb-carousel>
+  <ng-template ngbSlide *ngFor="let event of events">
+    <img src="{{event.imageUrl}}" alt="{{event.title}}">
+    <div class="carousel-caption">
+      <h3>{{event.title}}</h3>
+      <p>{{event.description}}</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
